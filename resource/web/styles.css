@@ -1,0 +1,63 @@
+@font-face {
+    font-family: Roboto;
+    src: url(fonts/roboto/Roboto-Regular.woff);
+}
+
+body {
+    display: none;
+}
+
+#badge-container {
+    position: absolute;
+    width: 700px;
+    height: 700px;
+    top: 190px;
+    right: 100px;
+}
+
+#background-img {
+    position: absolute;
+    width: 130px;
+    height: 130px;
+    top: 210px;
+    left: 165px;
+}
+
+#badge-img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+#info-container {
+    position: absolute;
+    top: 280px;
+    right: 237px;
+    width: 400px;
+    height: 100px;
+    color: rgb(0, 0, 0);
+    text-align: center;
+}
+
+#name, #rank {
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    left: 27%;
+    top: 96px;
+    transform: translateX(-50%);
+    font-family: Arial;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+#name {
+    top: 120px;
+    font-family: Arial;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+#rank {
+    font-weight: bold;
+}
