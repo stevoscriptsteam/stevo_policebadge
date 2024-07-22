@@ -44,7 +44,9 @@ end)
 
 RegisterNetEvent('stevo_policebadge:showbadge')
 AddEventHandler('stevo_policebadge:showbadge', function(data, ply)
-    TriggerClientEvent('stevo_policebadge:displaybadge', ply, data)
+    for i, player in pairs(ply) do
+        TriggerClientEvent('stevo_policebadge:displaybadge', player, data)
+    end
 end)
 
 CreateThread(function()

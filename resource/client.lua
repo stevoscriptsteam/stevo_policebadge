@@ -12,6 +12,15 @@ local function show_badge()
 
     SendNUIMessage({ type = "displayBadge", data = badge_data })
 
+    local players = lib.getNearbyPlayers(GetEntityCoords(PlayerPedId()), 3, false)
+    if #players > 0 then
+        local ply = {}
+        for i = 1, #players do
+            table.insert(ply, GetPlayerServerId(players[i].id))
+        end
+        TriggerServerEvent('stevo_policebadge:showbadge', badge_data, ply)
+    end
+
     lib.progressBar({
         duration = Config.badge_show_time,
         label = Config.locales.progress_label,
@@ -31,15 +40,6 @@ local function show_badge()
             rot = vec3(-90.00,-180.00,78.999)
         },
     })
-
-    local players = lib.getNearbyPlayers(GetEntityCoords(PlayerPedId()), 3, false)
-    if #players > 0 then
-        local ply = {}
-        for i = 1, #players do
-            table.insert(ply, GetPlayerServerId(players[i].id))
-        end
-        TriggerServerEvent('stevo_policebadge:showbadge', badge_data, ply)
-    end
 end
 
 exports('use', function()
