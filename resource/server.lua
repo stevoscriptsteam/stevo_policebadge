@@ -42,8 +42,8 @@ lib.callback.register("stevo_policebadge:setBadgePhoto", function(source, photo)
     return id
 end)
 
-RegisterNetEvent('stevo_policebadge:showBadge')
-AddEventHandler('stevo_policebadge:showBadge', function(data, ply)
+RegisterNetEvent('stevo_policebadge:showbadge')
+AddEventHandler('stevo_policebadge:showbadge', function(data, ply)
     TriggerClientEvent('stevo_policebadge:displaybadge', ply, data)
 end)
 
