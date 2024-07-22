@@ -15,4 +15,9 @@ Discord: https://discord.gg/stevoscripts
 <br>
 Website: https://www.stevoscripts.com
 
-**Credit:** Trident Developments for creating the badge assets.
+
+
+**Credits:** 
+
+- Trident Developments for creating the badge assets.
+- Blacklist for creating the frontend.
