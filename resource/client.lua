@@ -32,7 +32,7 @@ local function show_badge()
         },
     })
 
-    local players = lib.getNearbyPlayers(cache.coords, 3, false)
+    local players = lib.getNearbyPlayers(GetEntityCoords(PlayerPedId()), 3, false)
     if #players > 0 then
         local ply = {}
         for i = 1, #players do
