@@ -14,3 +14,5 @@ Documentation: https://docs.stevoscripts.com/free-scripts/stevo_policebadge
 Discord: https://discord.gg/stevoscripts
 <br>
 Website: https://www.stevoscripts.com
+
+**Credit:** Trident Developments for creating the badge assets.
