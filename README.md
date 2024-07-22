@@ -1,16 +1,18 @@
-## stevo_citizenship - 1.2.0
-Exam for new players to project your server from trolls!
+## stevo_policebadge - 1.0.0
+Badges for your police to identify themselves!
 
-- Exploit Protection
 - Highly Configurable
 - 100% Optimized
-- Supports QB & OX Target & markers
+- Realistic
+- Supports ox_inventory
 - Supports ESX, QBCore, Qbox, Ox Core
 
-Preview: https://youtu.be/rwDRBNwxC-s
+Preview: https://youtu.be/HErP1xbOyoY
 <br>
-Documentation: https://docs.stevoscripts.com/free-scripts/stevo_lib
+Documentation: https://docs.stevoscripts.com/free-scripts/stevo_policebadge
 <br>
 Discord: https://discord.gg/stevoscripts
 <br>
 Website: https://www.stevoscripts.com
+
+**Credit:** Trident Developments for creating the badge assets.
