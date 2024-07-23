@@ -1,5 +1,6 @@
 local Config = lib.require('config')
 local stevo_lib = exports['stevo_lib']:import()
+local currently_using_badge = false
 
 
 RegisterNetEvent('stevo_policebadge:displaybadge')
@@ -8,6 +9,7 @@ AddEventHandler('stevo_policebadge:displaybadge', function(data)
 end)
 
 local function show_badge()
+    local currently_using_badge = true
     local badge_data = lib.callback.await("stevo_policebadge:retrieveInfo", false)
 
     SendNUIMessage({ type = "displayBadge", data = badge_data })
@@ -40,19 +42,21 @@ local function show_badge()
             rot = vec3(-90.00,-180.00,78.999)
         },
     })
+
+    currently_using_badge = false
 end
 
 exports('use', function()
     local job, gang = stevo_lib.GetPlayerGroups()
     local ped = PlayerPedId()
     local swimming = IsPedSwimmingUnderWater(ped)
-    local incar = cache.vehicle
+    local incar = IsPedInAnyVehicle(ped, true)
 
     if job ~= Config.job_name then 
         return stevo_lib.Notify(Config.locales.not_police, 'error', 3000) 
     elseif swimming or incar then         
         return stevo_lib.Notify(Config.locales.not_now, 'error', 3000) 
-    else
+    elseif not currently_using_badge then 
         show_badge()
     end
 end)
