@@ -51,8 +51,16 @@ exports('use', function()
     local ped = PlayerPedId()
     local swimming = IsPedSwimmingUnderWater(ped)
     local incar = IsPedInAnyVehicle(ped, true)
+    local job_auth = false
 
-    if job ~= Config.job_name then 
+    
+    for _, group in pairs (Config.job_names) do    
+        if group == job then 
+            job_auth = true
+        end
+    end
+
+    if job_auth then 
         return stevo_lib.Notify(Config.locales.not_police, 'error', 3000) 
     elseif swimming or incar then         
         return stevo_lib.Notify(Config.locales.not_now, 'error', 3000) 
