@@ -60,7 +60,7 @@ exports('use', function()
         end
     end
 
-    if job_auth then 
+    if not job_auth then 
         return stevo_lib.Notify(Config.locales.not_police, 'error', 3000) 
     elseif swimming or incar then         
         return stevo_lib.Notify(Config.locales.not_now, 'error', 3000) 
