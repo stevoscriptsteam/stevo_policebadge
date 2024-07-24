@@ -72,7 +72,19 @@ end)
 RegisterCommand(Config.set_image_command, function()
     local job, gang = stevo_lib.GetPlayerGroups()
 
-    if job ~= Config.job_name then return stevo_lib.Notify(Config.locales.not_police, 'error', 3000) end
+    local job_auth = false
+
+    
+    for _, group in pairs (Config.job_names) do    
+        if group == job then 
+            job_auth = true
+        end
+    end
+
+    if not job_auth then 
+        stevo_lib.Notify(Config.locales.not_police, 'error', 3000)
+        return 
+    end
 
 
     local input = lib.inputDialog(Config.locales.input_title, {Config.locales.input_text})
