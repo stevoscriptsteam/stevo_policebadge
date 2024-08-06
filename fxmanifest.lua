@@ -31,12 +31,11 @@ files {
     'resource/web/img/*.png',
     'resource/web/fonts/roboto/*.woff',
     'resource/web/fonts/roboto/*.woff2',
+    'locales/*.json'
 }
 
-
 dependencies {
-    'ox_lib',
-    'ox_inventory',
+    'ox_lib'
     'oxmysql',
     'stevo_lib'
 }
