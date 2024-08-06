@@ -5,7 +5,7 @@ lua54 'yes'
 
 author "Stevo Scripts | Steve & Blacklist"
 description 'Badge system for police to prove identity.'
-version '1.0.0'
+version '1.5.0'
 
 ui_page 'resource/web/index.html'
 
