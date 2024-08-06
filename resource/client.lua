@@ -1,6 +1,7 @@
 local Config = lib.require('config')
 local stevo_lib = exports['stevo_lib']:import()
-local currently_using_badge = false
+local CURRENTLY_USING_BADGE = false
+lib.locale()
 
 
 RegisterNetEvent('stevo_policebadge:displaybadge')
@@ -9,7 +10,7 @@ AddEventHandler('stevo_policebadge:displaybadge', function(data)
 end)
 
 local function show_badge()
-    local currently_using_badge = true
+    CURRENTLY_USING_BADGE = true
     local badge_data = lib.callback.await("stevo_policebadge:retrieveInfo", false)
 
     SendNUIMessage({ type = "displayBadge", data = badge_data })
@@ -25,7 +26,7 @@ local function show_badge()
 
     lib.progressBar({
         duration = Config.badge_show_time,
-        label = Config.locales.progress_label,
+        label = locales('progress_label'),
         useWhileDead = false,
         canCancel = true,
         disable = {
@@ -43,10 +44,10 @@ local function show_badge()
         },
     })
 
-    currently_using_badge = false
+    CURRENTLY_USING_BADGE = false
 end
 
-exports('use', function()
+RegisterNetEvent('stevo_policebadge', function()
     local job, gang = stevo_lib.GetPlayerGroups()
     local ped = PlayerPedId()
     local swimming = IsPedSwimmingUnderWater(ped)
@@ -61,10 +62,10 @@ exports('use', function()
     end
 
     if not job_auth then 
-        return stevo_lib.Notify(Config.locales.not_police, 'error', 3000) 
+        return stevo_lib.Notify(locales('not_police'), 'error', 3000) 
     elseif swimming or incar then         
-        return stevo_lib.Notify(Config.locales.not_now, 'error', 3000) 
-    elseif not currently_using_badge then 
+        return stevo_lib.Notify(locales('not_now'), 'error', 3000) 
+    elseif not CURRENTLY_USING_BADGE then 
         show_badge()
     end
 end)
@@ -82,27 +83,27 @@ RegisterCommand(Config.set_image_command, function()
     end
 
     if not job_auth then 
-        stevo_lib.Notify(Config.locales.not_police, 'error', 3000)
+        stevo_lib.Notify(locales('not_police'), 'error', 3000)
         return 
     end
 
 
-    local input = lib.inputDialog(Config.locales.input_title, {Config.locales.input_text})
+    local input = lib.inputDialog(locales('input_title'), {locales('input_text')})
  
-    if not input then stevo_lib.Notify(Config.locales.no_photo, 'error', 3000) return end
+    if not input then stevo_lib.Notify(locales('no_photo'), 'error', 3000) return end
 
     local setBadge = lib.callback.await("stevo_policebadge:setBadgePhoto", false, input[1])
     if setBadge then
         lib.alertDialog({
-            header = Config.locales.department_name,
-            content = Config.locales.update_badge_photo_success,
+            header = locales('department_name'),
+            content = locales('update_badge_photo_success'),
             centered = true,
             cancel = false
         })
     else
         lib.alertDialog({
-            header = Config.locales.department_name,
-            content = Config.locales.update_badge_photo_fail,
+            header = locales('department_name'),
+            content = locales('update_badge_photo_fail'),
             centered = true,
             cancel = false
         })

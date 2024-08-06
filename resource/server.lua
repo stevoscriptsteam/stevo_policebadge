@@ -1,4 +1,6 @@
 local stevo_lib = exports['stevo_lib']:import()
+local config = lib.require('config')
+lib.locale()
 
 lib.callback.register("stevo_policebadge:retrieveInfo", function(source)
     local badge_data = {}
@@ -8,8 +10,6 @@ lib.callback.register("stevo_policebadge:retrieveInfo", function(source)
 
     badge_data.rank = job.grade ~= nil and job.grade.name or job.grade_label
     badge_data.name = stevo_lib.GetName(source)
-
-    print(identifier)
     
     local table = MySQL.single.await('SELECT `image` FROM `stevo_badge_photos` WHERE `identifier` = ? LIMIT 1', {
         identifier
@@ -62,4 +62,7 @@ CreateThread(function()
         print('[Stevo Scripts] Deployed database table for stevo_badge_photos')
     end
 
+    stevo_lib.RegisterUsableItem(config.badge_item_name, function(source)
+        TriggerClientEvent('stevo_police_badge', source)
+    end)
 end)
