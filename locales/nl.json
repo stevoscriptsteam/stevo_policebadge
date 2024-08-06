@@ -1,0 +1,11 @@
+{
+    "department_name": "Victoria Police",
+    "progress_label": "Badge Tonen",
+    "not_police": "Je bent geen politieagent!",
+    "not_now": "Je kunt dit nu niet gebruiken!",
+    "input_title": "Badge Foto",
+    "input_text": "Badge Foto URL",
+    "no_photo": "Je hebt geen foto ingevoerd",
+    "update_badge_photo_success": "Je badgefoto is succesvol bijgewerkt!",
+    "update_badge_photo_fail": "Het instellen van de nieuwe badgefoto is mislukt, probeer het opnieuw!"
+}

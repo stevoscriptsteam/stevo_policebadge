@@ -1,0 +1,11 @@
+{
+    "department_name": "Victoria Police",
+    "progress_label": "Showing Badge",
+    "not_police": "You are not a police officer!",
+    "not_now": "You cannot use this now!",
+    "input_title": "Badge Photo",
+    "input_text": "Badge Photo URL",
+    "no_photo": "You didn't enter a photo",
+    "update_badge_photo_success": "Successfully updated your Badge Photo!",
+    "update_badge_photo_fail": "Failed to set new Badge Photo, try again!"
+}

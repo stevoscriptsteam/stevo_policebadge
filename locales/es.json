@@ -1,0 +1,11 @@
+{
+    "department_name": "Policía de Victoria",
+    "progress_label": "Mostrando placa",
+    "not_police": "¡No eres un oficial de policía!",
+    "not_now": "¡No puedes usar esto ahora!",
+    "input_title": "Foto de la placa",
+    "input_text": "URL de la foto de la placa",
+    "no_photo": "No ingresaste una foto",
+    "update_badge_photo_success": "¡Foto de la placa actualizada con éxito!",
+    "update_badge_photo_fail": "No se pudo establecer la nueva foto de la placa, ¡inténtalo de nuevo!"
+}
