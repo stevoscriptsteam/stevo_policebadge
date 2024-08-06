@@ -26,7 +26,7 @@ local function show_badge()
 
     lib.progressBar({
         duration = Config.badge_show_time,
-        label = locales('progress_label'),
+        label = locale('progress_label'),
         useWhileDead = false,
         canCancel = true,
         disable = {
@@ -47,7 +47,7 @@ local function show_badge()
     CURRENTLY_USING_BADGE = false
 end
 
-RegisterNetEvent('stevo_policebadge', function()
+RegisterNetEvent('stevo_police_badge', function()
     local job, gang = stevo_lib.GetPlayerGroups()
     local ped = PlayerPedId()
     local swimming = IsPedSwimmingUnderWater(ped)
@@ -62,9 +62,9 @@ RegisterNetEvent('stevo_policebadge', function()
     end
 
     if not job_auth then 
-        return stevo_lib.Notify(locales('not_police'), 'error', 3000) 
+        return stevo_lib.Notify(locale('not_police'), 'error', 3000) 
     elseif swimming or incar then         
-        return stevo_lib.Notify(locales('not_now'), 'error', 3000) 
+        return stevo_lib.Notify(locale('not_now'), 'error', 3000) 
     elseif not CURRENTLY_USING_BADGE then 
         show_badge()
     end
@@ -83,27 +83,27 @@ RegisterCommand(Config.set_image_command, function()
     end
 
     if not job_auth then 
-        stevo_lib.Notify(locales('not_police'), 'error', 3000)
+        stevo_lib.Notify(locale('not_police'), 'error', 3000)
         return 
     end
 
 
-    local input = lib.inputDialog(locales('input_title'), {locales('input_text')})
+    local input = lib.inputDialog(locale('input_title'), {locale('input_text')})
  
-    if not input then stevo_lib.Notify(locales('no_photo'), 'error', 3000) return end
+    if not input then stevo_lib.Notify(locale('no_photo'), 'error', 3000) return end
 
     local setBadge = lib.callback.await("stevo_policebadge:setBadgePhoto", false, input[1])
     if setBadge then
         lib.alertDialog({
-            header = locales('department_name'),
-            content = locales('update_badge_photo_success'),
+            header = locale('department_name'),
+            content = locale('update_badge_photo_success'),
             centered = true,
             cancel = false
         })
     else
         lib.alertDialog({
-            header = locales('department_name'),
-            content = locales('update_badge_photo_fail'),
+            header = locale('department_name'),
+            content = locale('update_badge_photo_fail'),
             centered = true,
             cancel = false
         })

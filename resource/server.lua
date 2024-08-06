@@ -17,6 +17,7 @@ lib.callback.register("stevo_policebadge:retrieveInfo", function(source)
      
     badge_data.photo = table ~= nil and table.image or nil
     
+    print(badge_data.photo)
     return badge_data
 end)
 
