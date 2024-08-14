@@ -1,4 +1,4 @@
-## stevo_policebadge - 1.5.0
+## stevo_policebadge - 1.5.1
 Badges for your police to identify themselves!
 
 - Highly Configurable
