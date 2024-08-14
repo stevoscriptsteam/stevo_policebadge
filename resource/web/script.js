@@ -5,6 +5,8 @@ function showBadge(data) {
     
     if (data.photo) {
         document.getElementById('background-img').src = data.photo;
+    } else {
+        document.getElementById('background-img').src = 'img/none.png';
     }
     setTimeout(() => {
         document.body.style.display = 'none';
