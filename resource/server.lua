@@ -4,12 +4,21 @@ lib.locale()
 
 lib.callback.register("stevo_policebadge:retrieveInfo", function(source)
     local badge_data = {}
-
     local identifier = stevo_lib.GetIdentifier(source)
-    local job, gang = stevo_lib.GetPlayerGroups(source)
+    local jobName, _ = stevo_lib.GetPlayerGroups(source)
 
-    badge_data.rank = job.grade ~= nil and job.grade.name or job.grade_label
+    local player = stevo_lib.GetPlayer(source)
+    local job = player.getJob()
+
+    
+    if job and job.grade_label then
+        badge_data.rank = job.grade_label  or "Unknown" -- Use grade label as rank
+    else
+        badge_data.rank = "Unknown"
+    end
+
     badge_data.name = stevo_lib.GetName(source)
+    
     
     local table = MySQL.single.await('SELECT `image` FROM `stevo_badge_photos` WHERE `identifier` = ? LIMIT 1', {
         identifier
