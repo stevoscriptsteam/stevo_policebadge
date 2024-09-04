@@ -1,6 +1,10 @@
+lib.versionCheck('stevoscriptsteam/stevo_policebadge')
+if not lib.checkDependency('stevo_lib', '1.6.0') then error('You need to update stevo_lib to the latest version for stevo_policebadges.') end
+lib.locale()
+
 local stevo_lib = exports['stevo_lib']:import()
 local config = lib.require('config')
-lib.locale()
+
 
 lib.callback.register("stevo_policebadge:retrieveInfo", function(source)
     local badge_data = {}
@@ -59,20 +63,24 @@ AddEventHandler('stevo_policebadge:showbadge', function(data, ply)
     end
 end)
 
-CreateThread(function()
-    local success, result = pcall(MySQL.scalar.await, 'SELECT 1 FROM stevo_badge_photos')
+AddEventHandler('onResourceStart', function(resource)
+    if resource ~= cache.resource then return end
 
-    if not success then
+    local tableExists, result = pcall(MySQL.scalar.await, 'SELECT 1 FROM stevo_badge_photos')
+
+    if not tableExists then
         MySQL.query([[CREATE TABLE IF NOT EXISTS `stevo_badge_photos` (
         `id` INT NOT NULL AUTO_INCREMENT,
         `identifier` VARCHAR(50) NOT NULL,
         `image` longtext NOT NULL,
         PRIMARY KEY (`id`)
         )]])
-        print('[Stevo Scripts] Deployed database table for stevo_badge_photos')
+
+        lib.print.info('[Stevo Scripts] Deployed database table for stevo_badge_photos')
     end
 
     stevo_lib.RegisterUsableItem(config.badge_item_name, function(source)
-        TriggerClientEvent('stevo_police_badge', source)
+        TriggerClientEvent('stevo_policebadge:use', source)
     end)
 end)
+
