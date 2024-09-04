@@ -4,8 +4,8 @@ Badges for your police to identify themselves!
 - Highly Configurable
 - 100% Optimized
 - Realistic
-- Supports ox_inventory
-- Supports ESX, QBCore, Qbox, Ox Core
+- Supports All inventories!
+- Supports ESX, QBCore and  Qbox
 
 Preview: https://youtu.be/HErP1xbOyoY
 <br>
@@ -16,8 +16,8 @@ Discord: https://discord.gg/stevoscripts
 Website: https://www.stevoscripts.com
 
 
-
 **Credits:** 
 
 - Trident Developments for creating the badge assets.
 - Blacklist for creating the frontend.
+- Brave Developments for the job grade label PR
