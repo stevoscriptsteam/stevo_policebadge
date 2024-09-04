@@ -20,4 +20,5 @@ Website: https://www.stevoscripts.com
 
 - Trident Developments for creating the badge assets.
 - Blacklist for creating the frontend.
+- Apollo studios for the badge image PR
 - Brave Developments for the job grade label PR
