@@ -1,5 +1,5 @@
 lib.versionCheck('stevoscriptsteam/stevo_policebadge')
-if not lib.checkDependency('stevo_lib', '1.6.0') then error('You need to update stevo_lib to the latest version for stevo_policebadges.') end
+if not lib.checkDependency('stevo_lib', '1.6.7') then error('You need to update stevo_lib to the latest version for stevo_policebadges.') end
 lib.locale()
 
 local stevo_lib = exports['stevo_lib']:import()
@@ -9,17 +9,10 @@ local config = lib.require('config')
 lib.callback.register("stevo_policebadge:retrieveInfo", function(source)
     local badge_data = {}
     local identifier = stevo_lib.GetIdentifier(source)
-    local jobName, _ = stevo_lib.GetPlayerGroups(source)
-
-    local player = stevo_lib.GetPlayer(source)
-    local job = player.getJob()
+    local job = stevo_lib.GetJobInfo(source)
 
     
-    if job and job.grade_label then
-        badge_data.rank = job.grade_label  or "Unknown" -- Use grade label as rank
-    else
-        badge_data.rank = "Unknown"
-    end
+    badge_data.rank = job.gradeLabel  or "Unknown" 
 
     badge_data.name = stevo_lib.GetName(source)
     
@@ -30,7 +23,6 @@ lib.callback.register("stevo_policebadge:retrieveInfo", function(source)
      
     badge_data.photo = table ~= nil and table.image or nil
     
-    print(badge_data.photo)
     return badge_data
 end)
 
