@@ -9,7 +9,7 @@ local config = lib.require('config')
 lib.callback.register("stevo_policebadge:retrieveInfo", function(source)
     local badge_data = {}
     local identifier = stevo_lib.GetIdentifier(source)
-    local job = stevo_lib.GetJobInfo(source)
+    local job = stevo_lib.GetPlayerJobInfo(source)
 
     
     badge_data.rank = job.gradeLabel  or "Unknown" 
