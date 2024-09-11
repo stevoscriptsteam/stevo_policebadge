@@ -12,7 +12,7 @@ lib.callback.register("stevo_policebadge:retrieveInfo", function(source)
     local job = stevo_lib.GetPlayerJobInfo(source)
 
     
-    badge_data.rank = job.grade  or "Unknown" 
+    badge_data.rank = job.gradeName  or "Unknown" 
 
     badge_data.name = stevo_lib.GetName(source)
     
