@@ -1,0 +1,11 @@
+{
+    "department_name": "Nom du département", 
+    "progress_label": "Montre le badge",
+    "not_police": "Vous n'êtes pas un agent de police!",
+    "not_now": "Vous ne pouvez pas utiliser ça maintenant!",
+    "input_title": "Badge Photo",
+    "input_text": "Badge Photo URL",
+    "no_photo": "Vous n'avez pas entrer de photo",
+    "update_badge_photo_success": "Mise à jour réussie de la photo de votre badge!",
+    "update_badge_photo_fail": "La mise d'une nouvelle photo de badge a échoué, réessayez.!"
+}
