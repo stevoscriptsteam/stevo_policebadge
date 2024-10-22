@@ -1,0 +1,11 @@
+{
+    "department_name": "Los Santos Police Department",
+    "progress_label": "Näitad ametitõendit",
+    "not_police": "Teil puudub Politsei töö!",
+    "not_now": "Sa ei saa kasutada seda hetkel!",
+    "input_title": "Ametitõendi pilt",
+    "input_text": "Ametitõendi pildi URL",
+    "no_photo": "Täida vajalikud lüngad!",
+    "update_badge_photo_success": "Ametitõendi pildi uuendamine oli edukas!",
+    "update_badge_photo_fail": "Ametitõendi pildi uuendamine ebaõnnestus!"
+}
