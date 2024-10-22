@@ -1,0 +1,11 @@
+{
+    "department_name": "Los Santos Police",
+    "progress_label": "Zeigt seinen Dienstausweis!",
+    "not_police": "Du bist kein Polizist!",
+    "not_now": "Du kannst das jetzt nicht benutzen!",
+    "input_title": "Dienstausweis Foto",
+    "input_text": "Dienstausweis Foto URL",
+    "no_photo": "Du hast kein Foto angegeben",
+    "update_badge_photo_success": "Super! Du hast dein Dienstausweis Foto hochgeladen!",
+    "update_badge_photo_fail": "Fehlgeschlagen, Du hast dein Dienstausweis Foto nicht geupdatet!"
+}
