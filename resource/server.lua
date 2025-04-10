@@ -1,5 +1,6 @@
 lib.versionCheck('stevoscriptsteam/stevo_policebadge')
 if not lib.checkDependency('stevo_lib', '1.6.7') then error('You need to update stevo_lib to the latest version for stevo_policebadges.') end
+print('stevo_policebadge is depreciated, you can be our new and vastly improved version on our tebex: store.stevoscripts.com')
 lib.locale()
 
 local stevo_lib = exports['stevo_lib']:import()
