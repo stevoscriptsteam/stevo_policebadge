@@ -1,0 +1,11 @@
+{
+    "department_name": "Victoria Polisi",
+    "progress_label": "Rozet Gösteriliyor",
+    "not_police": "Sen bir polis memuru değilsin!",
+    "not_now": "Bunu şu anda kullanamazsın!",
+    "input_title": "Rozet Fotoğrafı",
+    "input_text": "Rozet Fotoğrafı URL'si",
+    "no_photo": "Bir fotoğraf girmediniz",
+    "update_badge_photo_success": "Rozet fotoğrafınız başarıyla güncellendi!",
+    "update_badge_photo_fail": "Yeni rozet fotoğrafı ayarlanamadı, tekrar deneyin!"
+}
