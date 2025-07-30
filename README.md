@@ -1,3 +1,10 @@
+## This resource is outdated, we reccomend you use Stevo Job Badges
+
+Preview: https://youtu.be/nAUoMv2nwAs?si=_ghgvFeKz-5BFrSi
+Store: https://stevoscripts.com/store/6839709
+
+
+
 ## stevo_policebadge - 1.5.6
 Badges for your police to identify themselves!
 
