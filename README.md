@@ -1,7 +1,3 @@
-Here’s a cleaner, more professional, and Markdown-optimised version of your `README.md` that improves structure, clarity, and visual appeal for GitHub:
-
----
-
 # ⚠️ This Resource is Deprecated
 
 We **no longer support** this resource. It is recommended you use [**Stevo Job Badges**](https://stevoscripts.com/store/6839709) instead.
