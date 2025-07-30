@@ -1,4 +1,4 @@
-## This resource is outdated, we reccomend you use Stevo Job Badges
+# This resource is outdated, we reccomend you use Stevo Job Badges
 
 Preview: https://youtu.be/nAUoMv2nwAs?si=_ghgvFeKz-5BFrSi
 <br>
